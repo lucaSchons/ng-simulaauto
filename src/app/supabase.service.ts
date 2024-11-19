@@ -29,4 +29,20 @@ export class SupabaseService {
     }
   }
 
+
+  async listEmpresaNome(nome: string){
+    try {
+      const {data, error} = await this.supabase.from('empresa').select().eq('nome', nome); 
+      if(error){
+        alert(error.message);
+      }
+      return data;
+
+    } catch(error) {
+      alert(error);
+      return null;
+    }
+
+  }
+
 }

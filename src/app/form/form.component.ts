@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { SupabaseService } from './../supabase.service';
 import { Component, effect, inject, signal } from '@angular/core';
 
@@ -11,6 +12,7 @@ import { Component, effect, inject, signal } from '@angular/core';
 export class FormComponent {
   private empresa_service = inject(SupabaseService);
   empresas = signal<any>([]);
+  private router = inject(Router);
 
   constructor(){
     effect(() => {
@@ -30,6 +32,10 @@ export class FormComponent {
     .catch((err) => {
       alert(err.message);
     })
+  }
+
+  goToList(empresa: any){
+    this.router.navigate(['form', empresa.nome])
   }
 
 }
