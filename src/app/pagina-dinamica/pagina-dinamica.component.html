@@ -1,15 +1,37 @@
 <h1>Bem-vindo!</h1>
 @for(msg of this.empresa(); track msg){
-    <h2>{{msg?.nome}}</h2>
+<h2>{{msg?.nome}}</h2>
 }
-
 <form [formGroup]="form_simulacao" (ngSubmit)="onSubmit()">
-    <input type="text" formControlName="veiculo" placeholder="digite veiculo"/>
-    <input type="number" formControlName="valor_entrada" placeholder="digite valor de entrada"/>
-    <input type="text" formControlName="nome" placeholder="digite nome"/>
-    <input type="text" formControlName="cidade" placeholder="digite cidade"/>
-    <input type="text" formControlName="cpf" placeholder="digite cpf" />
-    <input type="text" formControlName="telefone" placeholder="digite telefone" />
-    <input type="email" formControlName="email" placeholder="digite email" />
-    <button type="submit">Enviar</button>
+    <mat-form-field>
+        <mat-label>Digite o nome do Veículo</mat-label>
+        <input matInput formControlName="veiculo" placeholder="Ex: HB20 2017 1.0" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Digite o Valor de Entrada</mat-label>
+        <input matInput formControlName="valor_entrada" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Digite seu Nome</mat-label>
+        <input matInput formControlName="nome" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Digite sua Cidade</mat-label>
+        <input matInput formControlName="cidade" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Digite seu CPF</mat-label>
+        <input matInput formControlName="cpf" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Digite seu Telefone</mat-label>
+        <input matInput formControlName="telefone" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Digite seu e-mail</mat-label>
+        <input matInput formControlName="email" />
+    </mat-form-field>
+  
+    <button  mat-flat-button color="primary" type="submit">Enviar Dados</button>
+    
 </form>
