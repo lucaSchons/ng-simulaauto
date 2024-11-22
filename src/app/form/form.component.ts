@@ -35,7 +35,7 @@ export class FormComponent {
   }
 
   goToList(empresa: any){
-    this.router.navigate(['form', empresa.nome])
+    this.router.navigate(['formulario', empresa.nome])
   }
 
 }

@@ -6,7 +6,7 @@ export const routes: Routes = [
         loadComponent: () => import('./form/form.component').then((com) => com.FormComponent)
     },
     {
-        path: 'form/:nome',
+        path: 'formulario/:nome',
         loadComponent: () => import('./pagina-dinamica/pagina-dinamica.component').then((com) => com.PaginaDinamicaComponent)
     }
 ];

@@ -1,4 +1,15 @@
 <h1>Bem-vindo!</h1>
 @for(msg of this.empresa(); track msg){
-    <span>{{msg?.nome}}</span>
+    <h2>{{msg?.nome}}</h2>
 }
+
+<form [formGroup]="form_simulacao" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="veiculo" placeholder="digite veiculo"/>
+    <input type="number" formControlName="valor_entrada" placeholder="digite valor de entrada"/>
+    <input type="text" formControlName="nome" placeholder="digite nome"/>
+    <input type="text" formControlName="cidade" placeholder="digite cidade"/>
+    <input type="text" formControlName="cpf" placeholder="digite cpf" />
+    <input type="text" formControlName="telefone" placeholder="digite telefone" />
+    <input type="email" formControlName="email" placeholder="digite email" />
+    <button type="submit">Enviar</button>
+</form>
